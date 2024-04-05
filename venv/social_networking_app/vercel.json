@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "venv/social_networking_app/wsgi.py",
+        "src": "venv/social_networking_app/social_networking_app/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "venv/social_networking_app/wsgi.py"
+            "dest": "venv/social_networking_app/social_networking_app/wsgi.py"
         }
     ]
 }
