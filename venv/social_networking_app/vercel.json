@@ -2,12 +2,12 @@
     "version": 2,
     "builds": [
       {
-        "src": "venv/social_networking_app/wsgi.py",
+        "src": "social_networking_app/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
       {
-        "src": "venv/social_networking_app/build_files.sh",
+        "src": "social_networking_app/build_files.sh",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "staticfiles_build"
@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "venv/social_networking_app/wsgi.py"
+        "dest": "social_networking_app/wsgi.py"
       }
     ]
   }
