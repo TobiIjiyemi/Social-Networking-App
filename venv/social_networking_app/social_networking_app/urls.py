@@ -19,6 +19,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path("", include("django_nextjs.urls")),
-    path("login/", include("login.urls")), 
+    path("", include("login.urls")), 
+    path("login/", include("login.urls")),
     path('admin/', admin.site.urls)
 ]
