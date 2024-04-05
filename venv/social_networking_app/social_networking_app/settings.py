@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'social_networking_app.wsgi.application'
+WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 
 # Database
