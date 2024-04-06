@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "social_networking_app/wsgi.py",
+      "src": "social-networking-app/social_networking_app/wsgi.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "social_networking_app/wsgi.py" }
+    { "src": "/(.*)", "dest": "social-networking-app/social_networking_app/wsgi.py" }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "social_networking_app.settings"
+    "DJANGO_SETTINGS_MODULE": "social-networking-app/social_networking_app.settings"
   }
 }
