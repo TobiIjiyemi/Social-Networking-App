@@ -4,7 +4,7 @@ from django_nextjs.render import render_nextjs_page_sync
 # Create your views here.
 
 def index(request):
-    return render_nextjs_page_sync(request)
+    return HttpResponse("Base page")
 
 def login(request):
     return HttpResponse("Hello theree??")

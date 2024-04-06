@@ -19,7 +19,7 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    path("", include("django_nextjs.urls")),
+    #path("", include("django_nextjs.urls")),
     path("", include("login.urls")), 
     path("login/", include("login.urls")),
     path('admin/', admin.site.urls)
