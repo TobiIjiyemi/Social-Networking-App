@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
-    'django_nextjs',
-    #'django_nextjs.apps.DjangoNextJSConfig'
 ]
 
 MIDDLEWARE = [
