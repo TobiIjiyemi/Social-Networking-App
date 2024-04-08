@@ -22,7 +22,7 @@ django_asgi_app = get_asgi_application()
 
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
-# from django_nextjs.proxy import NextJSProxyHttpConsumer, NextJSProxyWebsocketConsumer
+from django_nextjs.proxy import NextJSProxyHttpConsumer, NextJSProxyWebsocketConsumer
 
 # from django.conf import settings
 
