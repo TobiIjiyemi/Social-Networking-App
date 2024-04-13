@@ -11,10 +11,12 @@ config={
   "storageBucket": "socialapp-34c1e.appspot.com",
   "messagingSenderId": "48387053736",
   "appId": "1:48387053736:web:27ca5f78b748529ddcca9d",
-  "measurementId": "G-LQS2EGEHQ8"
 }
 firebase=pyrebase.initialize_app(config)
 authe = firebase.auth()
 database=firebase.database()
 
-print(database.child('User').get().val())
+
+def home(request):
+    userNum = (database.child('User').get().val())
+    return render(request,"home.html",{"userNum":userNum})
