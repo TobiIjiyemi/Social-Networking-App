@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firebase_auth',
+    "django_nextjs",
 ]
 
 MIDDLEWARE = [

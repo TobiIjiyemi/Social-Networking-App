@@ -17,24 +17,33 @@ firebase=pyrebase.initialize_app(config)
 authe = firebase.auth()
 database=firebase.database()
 
+#How to make database
+#data = {"Name": "Rachel Li", "Age": 17}
+#database.child("Users").child("user" + str(1)).set(data)
+userNum = 1
 
-#def home(request):
-#    userNum = (database.child('User').get().val())
-#    return render(request,"Home.html",{"userNum":userNum})
+def updateAge(user, age):
+     database.child("Users").child(user).update({"Age":age})
+
+def createUser():
+     database.child("Users").child()
 
 def signIn(request):
     return render(request,"Login.html")
 def home(request):
     return render(request,"Home.html")
+
+def postsignInGoogle(request):
+  print("Ran")
  
-def postsignIn(request):
+def postsignInEmail(request):
     email=request.POST.get('email')
     pasw=request.POST.get('pass')
     try:
         # if there is no error then signin the user with given email and password
         user=authe.sign_in_with_email_and_password(email,pasw)
     except:
-        message="Invalid Credentials!!Please ChecK your Data"
+        message="Invalid Credentials!!Please Check your Data"
         return render(request,"Login.html",{"message":message})
     session_id=user['idToken']
     request.session['uid']=str(session_id)
@@ -57,9 +66,15 @@ def postsignUp(request):
      try:
         # creating a user with the given email and password
         user=authe.create_user_with_email_and_password(email,passs)
+
         uid = user['localId']
         idtoken = request.session['uid']
         print(uid)
+
+        # add email to database
+        userNum += 1
+        data = {"email": email}
+        database.child("Users").child("user" + str(userNum)).set(data)
      except:
         return render(request, "Registration.html")
      return render(request,"Login.html")

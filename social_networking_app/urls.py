@@ -15,13 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from firebase_auth import views
  
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.signIn),
-    path('postsignIn/', views.postsignIn),
+    path('postsignInEmail/', views.postsignInEmail),
     path('signUp/', views.signUp, name="signup"),
     path('logout/', views.logout, name="log"),
     path('postsignUp/', views.postsignUp),

@@ -38,7 +38,7 @@
 </head>
 <body>
 
-<form action="/postsignIn/" method="post">
+<form action="/postsignInEmail/" method="post">
 	{% csrf_token %}
 	<br/>
 <!-- Enter Your Email: -->
@@ -55,6 +55,8 @@
 	<input type="checkbox" checked="checked" name="remember"> Remember me
 	</label>
 	<button type="button" onclick="location.href='{% url 'signup' %} '">SignUp</button>
+</form>
+
 </form>
 </body>
 </html>
